@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   def most_recent_comments
     comments.order('created_at desc').limit(5)
   end
-    
+
   private
 
   def increase_posts_counter
