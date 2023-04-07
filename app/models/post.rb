@@ -3,6 +3,10 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   belongs_to :author, class_name: 'User'
   after_save :increase_posts_counter
+
+  def most_recent_3_posts
+    posts.order('created_at desc').limit(3)
+  end
     
   private
 
