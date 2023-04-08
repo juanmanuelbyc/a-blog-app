@@ -2,15 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   before(:each) do
-    @user = User.create(name: 'Test User',
+
+    @user = User.new(name: 'Test User',
                         photo: 'test photo link',
-                        bio: 'Testing Tool',
-                        posts_counter: 18)
-    @post = Post.create(author: @user,
+                        bio: 'Testing Tool')
+    @user.save                   
+    @post = Post.new(author: @user,
                         title: 'Hello',
                         text: 'Some text',
-                        comments_counter: 2,
-                        likes_counter: 3)
+                        comments_counter: 2)
+    @post.save
   end
 
   context 'testing method for Like model' do
@@ -19,7 +20,8 @@ RSpec.describe Like, type: :model do
       Like.create(post: @post, author: @user)
 
       to_check = @post.likes_counter
-      expect(to_check).to eq 5
+      expect(to_check).to eq 2
     end
+    Post.delete_all
   end
 end
