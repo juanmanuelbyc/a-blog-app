@@ -1,0 +1,17 @@
+current directory: C:/Users/juan2/OneDrive/Documents/GitHub/a-blog-app/vendor/bundle/ruby/3.1.0/gems/debug-1.7.2/ext/debug
+C:/Ruby31-x64/bin/ruby.exe -I C:/Ruby31-x64/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: C:/Users/juan2/OneDrive/Documents/GitHub/a-blog-app/vendor/bundle/ruby/3.1.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230407-12484-v3zt9v sitelibdir\=./.gem.20230407-12484-v3zt9v clean
+
+current directory: C:/Users/juan2/OneDrive/Documents/GitHub/a-blog-app/vendor/bundle/ruby/3.1.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230407-12484-v3zt9v sitelibdir\=./.gem.20230407-12484-v3zt9v
+generating debug-x64-mingw-ucrt.def
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: C:/Users/juan2/OneDrive/Documents/GitHub/a-blog-app/vendor/bundle/ruby/3.1.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230407-12484-v3zt9v sitelibdir\=./.gem.20230407-12484-v3zt9v install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20230407-12484-v3zt9v/debug
