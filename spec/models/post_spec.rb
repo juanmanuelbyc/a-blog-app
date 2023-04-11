@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  before(:each) do
+  before(:all) do
     @test_post = Post.create(title: 'Post1',
                              text: 'Post text',
                              author: @test_user)

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before(:each) do
+  before(:all) do
     @test_user = User.create(name: 'Juan',
                              photo: 'photo-link',
                              bio: 'Microverse student',
