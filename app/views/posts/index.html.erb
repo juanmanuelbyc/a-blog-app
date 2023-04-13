@@ -1,3 +1,36 @@
-<div>
-  <h3>Here is a list of posts for a given user</h3>
-</div>
+<section class="posts-index-page">
+  <div class="user-container">
+    <img src=<%=@user.photo %> alt="user photo">
+    <div class="user-info">
+      <h1><%= @user.name %></h1>
+      <h3 id="post-counter">Number of posts: <%= @user.posts_counter %></h3>
+    </div>
+  </div>
+
+  <div class="recent-posts">
+    <% @posts.each do |post| %>
+    <div class="post-show">
+      <a href="./<%=post.id%>">
+        <h2><%= post.title %></h2>
+        <p id="post-text">
+          <%= post.text %>
+        </p>
+    
+        <div class="comment-like">
+          <span>Comments: <%= post.comments_counter%>, </span>
+          <span class="likes">Likes:<%= post.likes_counter%></span>
+        </div>
+      </a>
+      
+      </div>
+      <div class="comments-container">
+        <% @comments=Post.find(post.id).most_recent_comments %>
+        <% @comments.each do |comment| %>
+          <div  id="single-comment"> 
+            <span> <%= comment.author.name %> : <%= comment.text %></span>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>

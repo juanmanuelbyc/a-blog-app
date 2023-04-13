@@ -58,8 +58,6 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
 - [Comming Soon 🎈]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -117,8 +115,6 @@ OR
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👨‍💻 **Juan Diaz**
 
 - GitHub: [@juanmanuelbyc](https://github.com/juanmanuelbyc)
@@ -152,8 +148,6 @@ Feel free to check the [issues page](../../issues/).
 <!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
-
-> Write a message to encourage readers to support your project
 
 If you like this project then please give a ⭐️ and also share your feedback using github_issues.
 
