@@ -26,7 +26,7 @@
         <% @comments=Post.find(post.id).comments %>
         <% @comments.each do |comment| %>
           <div  id="single-comment"> 
-            <span> <%= comment.user.name %> : <%= comment.text %></span>
+            <span> <%= comment.author.name %> : <%= comment.text %></span>
           </div>
         <% end %>
       </div>
