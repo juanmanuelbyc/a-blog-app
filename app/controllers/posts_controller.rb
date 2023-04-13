@@ -9,4 +9,17 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @like = Like.new
   end
+
+  def new
+    @user = current_user
+    @post = Post.new
+  end
+
+  def create
+    @user = current_user
+    @post = Post.new(params[:post])
+    @post.author_id = @user.id
+    @post.save
+    redirect_to user_posts_path(@user)
+  end
 end
