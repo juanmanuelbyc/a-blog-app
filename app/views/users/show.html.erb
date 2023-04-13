@@ -1,21 +1,22 @@
 <section class="individual-user-page">
   <div class="user-container">
     <img src=<%=@user.photo %> alt="user photo">
-    <div class="user-name-and-counter">
+    <div class="user-info">
       <h1><%= @user.name %></h1>
       <h3 id="post-counter">Number of posts: <%= @user.posts_counter %></h3>
     </div>
   </div>
-  <hr>
+
   <div class="user-bio">
     <h2>Bio</h2>
     <p>
       <%= @user.bio %>
     </p>
   </div>
-  <hr>
+
   <div class="recent-posts">
     <% @user.most_recent_3_posts.each do |post| %>
+    <div class="post-show">
       <a href="<%=@user.id%>/posts/<%=post.id%>">
         <h2><%= post.title %></h2>
         <p id="post-text">
@@ -26,6 +27,7 @@
           <span class="likes">Likes:<%= post.likes_counter%></span>
         </div>
       </a>
+    </div>
     <% end %>
     <a href="<%=@user.id%>/posts/" class="button">See all posts</a>
   </div>
