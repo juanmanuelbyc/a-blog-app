@@ -24,7 +24,7 @@
       
       </div>
       <div class="comments-container">
-        <% @comments=Post.find(post.id).comments %>
+        <% @comments=Post.find(post.id).most_recent_comments %>
         <% @comments.each do |comment| %>
           <div  id="single-comment"> 
             <span> <%= comment.author.name %> : <%= comment.text %></span>
