@@ -8,7 +8,7 @@
   </div>
 
   <div class="recent-posts">
-    <% @posts.each do |post| %>
+    <% @user.posts.each do |post| %>
     <div class="post-show">
       <%= link_to  user_post_path(@user, post.id) do %>
         <h2><%= post.title %></h2>
@@ -24,7 +24,7 @@
       
       </div>
       <div class="comments-container">
-        <% @comments=Post.find(post.id).most_recent_comments %>
+        <% @comments=post.most_recent_comments.includes(:author) %>
         <% @comments.each do |comment| %>
           <div  id="single-comment"> 
             <span> <%= comment.author.name %> : <%= comment.text %></span>
