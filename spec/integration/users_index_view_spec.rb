@@ -17,7 +17,7 @@ RSpec.describe 'Users', type: :feature do
     end
 
     it 'I can see the number of posts each user has written' do
-      expect(page).to have_content('Number of posts: 1')
+      expect(page).to have_content('Number of posts: 3')
       expect(page).to have_content('Number of posts: 0')
     end
 

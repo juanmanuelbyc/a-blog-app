@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:all) do
-    @test_user = User.create(name: 'Juan',
+    @test_user = User.new(name: 'Juan',
                              photo: 'photo-link',
                              bio: 'Microverse student',
                              posts_counter: 0)
