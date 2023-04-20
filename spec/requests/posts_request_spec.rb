@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-
-  first_user = User.create(name: 'Juan', photo: 'https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png', bio: 'Microverse student')
+  first_user = User.create(name: 'Juan',
+                           photo: 'https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png', bio: 'Microverse student')
   first_post = Post.create(title: 'Post1', text: 'This is my first post', author_id: first_user.id)
 
   context 'GET /index' do

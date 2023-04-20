@@ -2,8 +2,8 @@ require 'rails_helper'
 
 # we group together our users tests
 RSpec.describe '/users', type: :request do
-
-  first_user = User.create(name: 'Juan', photo: 'https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png', bio: 'Microverse student')
+  first_user = User.create(name: 'Juan',
+                           photo: 'https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png', bio: 'Microverse student')
 
   context 'GET /index' do
     it 'renders a successful response' do

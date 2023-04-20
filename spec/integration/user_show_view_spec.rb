@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature 'Users Posts', type: :feature do
-  
-    first_user = User.create(name: 'Juan', photo: 'https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png', bio: 'Microverse student')
-    first_post = Post.create(title: 'Post1', text: 'This is my first post', author_id: first_user.id)
-    second_post = Post.create(title: 'Post3', text: 'This is my third post', author_id: first_user.id)
-    third_post = Post.create(title: 'Post4', text: 'This is my fourth post', author_id: first_user.id)
-  
-    before do
+  first_user = User.create(name: 'Juan',
+                           photo: 'https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png',
+                           bio: 'Microverse student')
+  first_post = Post.create(title: 'Post1', text: 'This is my first post', author_id: first_user.id)
+
+  before do
     visit user_path(first_user.id)
   end
 
@@ -44,10 +43,10 @@ RSpec.feature 'Users Posts', type: :feature do
   end
 
   it 'click on post should redirect to show post' do
-      visit "/users/#{first_user.id}"
-      post = first_user.most_recent_3_posts.first
-      click_on post.title
-      expect(has_current_path?("/users/#{first_user.id}/posts/#{post.id}", wait: 5)).to be_truthy
+    visit "/users/#{first_user.id}"
+    post = first_user.most_recent_3_posts.first
+    click_on post.title
+    expect(has_current_path?("/users/#{first_user.id}/posts/#{post.id}", wait: 5)).to be_truthy
   end
 
   describe 'Clicking to see all posts' do
