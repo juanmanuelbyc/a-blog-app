@@ -8,8 +8,12 @@ body {
   align-items: center;
 }
 
-#user_password, #user_email, #user_bio,
-#user_photo, #user_name, #user_password_confirmation {
+#user_password,
+#user_email,
+#user_bio,
+#user_photo,
+#user_name,
+#user_password_confirmation {
   width: 700px;
 }
 
@@ -18,8 +22,8 @@ input[type="submit"] {
 }
 
 a[data-turbo-method="delete"] {
- color: blue;
- align-self: flex-end;
+  color: blue;
+  align-self: flex-end;
 }
 
 .users-index-page {
@@ -178,4 +182,3 @@ hr {
 .sign_up_field {
   width: 100%;
 }
-
