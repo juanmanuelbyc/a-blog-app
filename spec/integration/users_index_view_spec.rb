@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :feature do
+
   before(:example) do
+    first_user = User.create(name: 'Juan', photo: 'https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png', bio: 'Microverse student')
+    second_user = User.create(name: 'Pedro', photo: 'https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png', bio: 'Microverse student')
+    first_post = Post.create(title: 'First Post', text: 'This is my first post', author_id: first_user.id)
+
     visit users_path
   end
 
@@ -16,8 +21,7 @@ RSpec.describe 'Users', type: :feature do
     end
 
     it 'I can see the number of posts each user has written' do
-      expect(page).to have_content('Number of posts: 3')
-      expect(page).to have_content('Number of posts: 0')
+      expect(page).to have_content('Number of posts: 1')
     end
 
     context 'when I click on a user' do
