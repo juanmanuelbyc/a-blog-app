@@ -13,7 +13,6 @@ RSpec.describe Like, type: :model do
                      likes_counter: 3)
   end
 
-
   context 'testing method for Like model' do
     it 'should check for likes counter increased by 1' do
       @like1 = Like.create(post: @post, author: @user)
