@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :feature do
-
   before(:example) do
     visit users_path
   end
-  
+
   describe 'GET /users' do
     it 'I can see the username of all other users' do
       expect(page).to have_content('Juan')

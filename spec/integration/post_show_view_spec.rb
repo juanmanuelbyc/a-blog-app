@@ -1,6 +1,5 @@
 require 'rails_helper'
 RSpec.describe 'Post show page', type: :feature do
-  
   before do
     visit user_post_path(1, 1)
   end

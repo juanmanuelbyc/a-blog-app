@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Post index page', type: :feature do
-
   before do
     visit user_posts_path(User.first.id)
   end
@@ -43,6 +42,5 @@ RSpec.describe 'Post index page', type: :feature do
       click_link(Post.find_by_id(1).title)
       expect(page).to have_current_path(user_post_path(1, 1))
     end
-
   end
 end

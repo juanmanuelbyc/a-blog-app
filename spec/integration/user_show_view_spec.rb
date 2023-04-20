@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'Users Posts', type: :feature do
-  
   before do
     visit user_path(1)
   end
@@ -40,7 +39,6 @@ RSpec.feature 'Users Posts', type: :feature do
 
   it 'click on post should redirect to show post' do
     User.all.each do |user|
-
       visit "/users/#{user.id}"
 
       post = user.most_recent_3_posts.first
