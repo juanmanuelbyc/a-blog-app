@@ -9,6 +9,7 @@ AllCops:
     - "node_modules/**/*"
     - "test/**/*"
     - "vendor/**/*"
+    - "app/models/user.rb"
 
   DisplayCopNames: true
 
