@@ -8,6 +8,11 @@
     </div>
   </div>
   <p><%= @post.text %></p>
+  <div>
+    <% if can? :destroy, @post %>
+      <%= button_to 'Delete post', user_post_path(@post.author, @post), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
   <div class="like-comment-buttons">
     <%= form_with model: @like, url: user_post_likes_path(1, @post), scope: :like do |form|%>
       <%= form.submit 'Like post', class: 'like-button' %>
@@ -19,6 +24,11 @@
     <% @post.comments.each do |comment| %>
       <div  id="single-comment">
         <span> <%= comment.author.name %> : <%= comment.text %></span>
+        <div>
+          <% if can? :destroy, comment %>
+            <%= button_to 'Delete comment', user_post_comment_path(comment.author, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
