@@ -22,6 +22,12 @@
           <span class="likes">Likes:<%= post.likes_counter%></span>
         </div>
       <% end %>
+
+      <div>
+        <% if can? :destroy, post %>
+          <%= button_to 'Delete post', user_post_path(post.author, post), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
       
       </div>
       <div class="comments-container">
@@ -29,6 +35,11 @@
         <% @comments.each do |comment| %>
           <div  id="single-comment"> 
             <span> <%= comment.author.name %> : <%= comment.text %></span>
+            <div>
+              <% if can? :destroy, comment %>
+                <%= button_to 'Delete comment', user_post_comment_path(comment.author, post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>

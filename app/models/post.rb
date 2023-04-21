@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   belongs_to :author, class_name: 'User'
   after_save :increase_posts_counter
+  after_destroy :decrement_posts_counter
 
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, presence: true,
@@ -22,5 +23,9 @@ class Post < ApplicationRecord
 
   def increase_posts_counter
     author.increment!(:posts_counter)
+  end
+
+  def decrement_posts_counter
+    author.decrement!(:posts_counter)
   end
 end
