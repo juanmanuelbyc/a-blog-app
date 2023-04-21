@@ -15,6 +15,12 @@ gem 'pg', '~> 1.1'
 # devise gem as a session and account manager for the app
 gem 'devise'
 
+# cancancan gem as a authorization rules manager for the app
+gem 'cancancan', '~> 1.9'
+
+# authentication with open_letter
+gem 'letter_opener'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
